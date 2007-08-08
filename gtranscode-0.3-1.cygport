@@ -1,0 +1,15 @@
+DESCRIPTION="GTK+ transcode frontend"
+HOMEPAGE="http://www.fuzzymonkey.net/software/gtranscode/"
+SRC_URI="http://fuzzymonkey.net/files/${PN}-v${PV}.tar.gz"
+SRC_DIR="${PN}"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	dobin ${PN}.exe
+}
